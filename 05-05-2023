@@ -1,0 +1,229 @@
+1) Finding whether a number is positive or negative:
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num > 0) {
+        printf("%d is a positive number\n", num);
+    }
+    else if (num < 0) {
+        printf("%d is a negative number\n", num);
+    }
+    else {
+        printf("0 is neither positive nor negative\n");
+    }
+
+    return 0;
+}
+
+2) Find The Greatest Between 2 Numbers:
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    if (num1 > num2) {
+        printf("%d is the greatest\n", num1);
+    }
+    else if (num2 > num1) {
+        printf("%d is the greatest\n", num2);
+    }
+    else {
+        printf("The numbers are equal\n");
+    }
+
+    return 0;
+}
+
+3) Vowel or Consonant:
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    ch = tolower(ch);
+
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+        printf("%c is a vowel\n", ch);
+    }
+    else {
+        printf("%c is a consonant\n", ch);
+    }
+
+    return 0;
+}
+
+4) Finding whether a person is a child,teenager, an adult or a senior citizen:
+#include <stdio.h>
+
+int main() {
+    int age;
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    if (age < 0) {
+        printf("Invalid age\n");
+    }
+    else if (age <= 12) {
+        printf("You are a child\n");
+    }
+    else if (age <= 19) {
+        printf("You are a teenager\n");
+    }
+    else if (age <= 59) {
+        printf("You are an adult\n");
+    }
+    else {
+        printf("You are a senior citizen\n");
+    }
+
+    return 0;
+}
+
+5) Finding whether the temperature is hot or cold:
+#include <stdio.h>
+
+int main() {
+    int temp;
+
+    printf("Enter the temperature in degrees Celsius: ");
+    scanf("%d", &temp);
+
+    if (temp < 0) {
+        printf("It's very cold\n");
+    }
+    else if (temp < 20) {
+        printf("It's cold\n");
+    }
+    else if (temp < 30) {
+        printf("It's warm\n");
+    }
+    else {
+        printf("It's hot\n");
+    }
+
+    return 0;
+}
+
+6) Finding whether a character is in upper or lower case:
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    if (isupper(ch)) {
+        printf("The character is in upper case\n");
+    }
+    else if (islower(ch)) {
+        printf("The character is in lower case\n");
+    }
+    else {
+        printf("The character is not an alphabet\n");
+    }
+
+    return 0;
+}
+
+7) Calculator Program:
+#include <stdio.h>
+
+int main() {
+    char operator;
+    double num1, num2, result;
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &operator);
+
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            if (num2 == 0) {
+                printf("Error: Cannot divide by zero\n");
+                return 1;
+            }
+            result = num1 / num2;
+            break;
+        default:
+            printf("Error: Invalid operator\n");
+            return 1;
+    }
+
+    printf("%.2lf %c %.2lf = %.2lf\n", num1, operator, num2, result);
+
+    return 0;
+}
+
+8) Finding whether a number is a multiple of 3 or 5 or both:
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number % 3 == 0 && number % 5 == 0) {
+        printf("%d is a multiple of both 3 and 5\n", number);
+    } else if (number % 3 == 0) {
+        printf("%d is a multiple of 3\n", number);
+    } else if (number % 5 == 0) {
+        printf("%d is a multiple of 5\n", number);
+    } else {
+        printf("%d is not a multiple of 3 or 5\n", number);
+    }
+
+    return 0;
+}
+
+9) Finding what grade(A,B,C,D,E or F) you took based of your marks:
+#include <stdio.h>
+
+int main() {
+    int marks;
+
+    printf("Enter marks obtained: ");
+    scanf("%d", &marks);
+
+    if (marks >= 90) {
+        printf("Grade A\n");
+    } else if (marks >= 80) {
+        printf("Grade B\n");
+    } else if (marks >= 70) {
+        printf("Grade C\n");
+    } else if (marks >= 60) {
+        printf("Grade D\n");
+    } else if (marks >= 50) {
+        printf("Grade E\n");
+    } else {
+        printf("Grade F\n");
+    }
+
+    return 0;
+}
